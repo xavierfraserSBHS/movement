@@ -9,7 +9,7 @@
             canvasContext = canvas.getContext('2d');
 
             setInterval(mainloop, 1000 / 50);
-        }
+        } // end func
         
         // player vars
         var playerXpos = 0;
@@ -23,7 +23,14 @@
         function mainloop() {
             colorRect(0,0,canvas.width,canvas.height,'black'); // bg
             colorRect(playerXpos,playerYpos,playerSIZE,playerSIZE,'red');// player
+       
+            playerMove();
         } // end func
+        
+        function playerMove(){
+            playerXpos += playerXspeed;
+        }
+        
         
          function colorRect(x,y,w,h,c){
             canvasContext.fillStyle = c;
