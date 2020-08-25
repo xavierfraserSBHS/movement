@@ -7,6 +7,9 @@
         window.onload = function() {
             canvas = document.getElementById('gameCanvas');
             canvasContext = canvas.getContext('2d');
+            
+            document.addEventListener('keydown',keyPressed);
+            document.addEventListener('keyup',keyReleased);
 
             setInterval(mainloop, 1000 / 50);
         } // end func
@@ -26,6 +29,14 @@
        
             playerMove();
         } // end func
+        
+        function keyPressed(evt){
+            console.log(evt.keyCode);
+        }
+        
+        function keyReleased(evt){
+            
+        }
         
         function playerMove(){
             playerXpos += playerXspeed;
